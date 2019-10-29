@@ -15,7 +15,7 @@ public class CellArea {
     public boolean verify(int val) {
         for (int x = this.x1; x <= this.x2; x++)
             for (int y = this.y1; y <= this.y2; y++) {
-                if (this.board.getCells()[x][y].value == val)
+                if (!this.board.getCells()[x][y].fixed && this.board.getCells()[x][y].value == val)
                     return true;
             }
         return false;
